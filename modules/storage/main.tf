@@ -3,7 +3,6 @@ resource "aws_s3_bucket" "insecure-bucket" {
   versioning.enabled = true
   logging 
   versioning.mfa_delete = true
-  versioning_configuration.mfa_delete = Enabled
 }
 
 # resource "aws_s3_bucket_public_access_block" "insecure-bucket" {
