@@ -1,8 +1,6 @@
 resource "aws_s3_bucket" "insecure-bucket" {
   bucket = "insecure-bucket"
   versioning.enabled = true
-  logging 
-  versioning.mfa_delete = true
 }
 
 # resource "aws_s3_bucket_public_access_block" "insecure-bucket" {
@@ -19,4 +17,6 @@ resource "aws_ebs_volume" "example" {
   tags = {
     Name = "insecure"
   }
+}
+resource "aws_s3_bucket_logging" "logging" {
 }
